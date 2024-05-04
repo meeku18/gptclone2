@@ -2,7 +2,6 @@ import { headers } from "next/headers";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import { SubmitButton } from "./submit-button";
-import Link from "next/link";
 
 export default function Login({
   searchParams,
@@ -47,7 +46,6 @@ export default function Login({
     if (error) {
       return redirect("/login?message=Could not authenticate user");
     }
-
     return redirect("/login?message=Check email to continue sign in process");
   };
 
@@ -96,7 +94,8 @@ export default function Login({
         </SubmitButton>
         {searchParams?.message && (
           <p className="mt-4 p-4 bg-foreground/10 text-center text-black">
-            {searchParams.message}
+            {searchParams.message}<br></br>
+            email rate limit exceeded: my credentials "email:hrishabh1800@gmail.com password:hrishabh"
           </p>
         )}
       </form>

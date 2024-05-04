@@ -3,14 +3,11 @@ import { useState } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import helper from "./inserting_data";
 
-
 interface QuesAns {
   question: string;
   response: string;
 }
-export default function ({email}:{email:string|undefined}) {
-
-  console.log(email);
+export default function ({ email }: { email: string | undefined }) {
 
   const [message, setMessage] = useState("");
   const [allQuesAns, setAllQuesAns] = useState<QuesAns[]>([]);
@@ -23,14 +20,13 @@ export default function ({email}:{email:string|undefined}) {
   const callApi = async () => {
     isLoading(true);
     const genAI = new GoogleGenerativeAI(
-      "AIzaSyBbF0AJkTvhUBYafXUVfwY-_eN1LcFugOc"
+      process.env.Googleapikey
     );
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
     const result = await model.generateContent(message);
     const response = result.response;
     const text = response.text();
-    const data = await helper({email,message,text});
-    console.log(text);
+    const data = await helper({ email, message, text });
     setAllQuesAns((e) => [
       ...e,
       {
@@ -48,7 +44,9 @@ export default function ({email}:{email:string|undefined}) {
           type="button"
           className="flex text-white hover:bg-zinc-800  focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-2 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-zinc-800 me-2 mb-2"
         >
-          <div className="text-lg flex ">ChatGPT <div className="px-1 text-zinc-400">3.5</div></div>
+          <div className="text-lg flex ">
+            ChatGPT <div className="px-1 text-zinc-400">3.5</div>
+          </div>
         </button>
       </div>
       {allQuesAns.length > 0 && (
@@ -143,9 +141,7 @@ export default function ({email}:{email:string|undefined}) {
               <div className="text-semibold text-sm text-white flex-start">
                 Create a morning routine
               </div>
-              <div className="text-xs mt-1">
-                to boost my productivity
-              </div>
+              <div className="text-xs mt-1">to boost my productivity</div>
             </button>
             <button
               className="border-[0.5px] border-slate-600 rounded-xl p-3 m-2 flex flex-col hover:bg-zinc-800"
@@ -154,7 +150,7 @@ export default function ({email}:{email:string|undefined}) {
               }}
             >
               <div className="text-semibold text-sm text-white flex-start">
-                Give me ideas   
+                Give me ideas
               </div>
               <div className="text-xs mt-1">
                 to what to do with my kids' art
@@ -163,7 +159,9 @@ export default function ({email}:{email:string|undefined}) {
             <button
               className="border-[0.5px] border-slate-600 rounded-xl p-3 m-2 flex flex-col hover:bg-zinc-800"
               onClick={() => {
-                setMessage("Write an email to request a quote from local plumbers");
+                setMessage(
+                  "Write an email to request a quote from local plumbers"
+                );
               }}
             >
               <div className="text-semibold text-sm text-white flex-start">
@@ -173,9 +171,14 @@ export default function ({email}:{email:string|undefined}) {
                 to request a quote from local plumbers
               </div>
             </button>
-            <button className="border-[0.5px] border-slate-600 rounded-xl p-3 m-2 flex flex-col hover:bg-zinc-800" onClick={() => {
-                setMessage(" Suggest fun activities to help me make friends in a new city");
-              }}>
+            <button
+              className="border-[0.5px] border-slate-600 rounded-xl p-3 m-2 flex flex-col hover:bg-zinc-800"
+              onClick={() => {
+                setMessage(
+                  " Suggest fun activities to help me make friends in a new city"
+                );
+              }}
+            >
               <div className="text-semibold text-sm text-white flex-start">
                 Suggest fun activities
               </div>

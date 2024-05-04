@@ -19,8 +19,9 @@ export default function ({ email }: { email: string | undefined }) {
   };
   const callApi = async () => {
     isLoading(true);
+    const apiKey = process.env.Googleapikey ?? '';
     const genAI = new GoogleGenerativeAI(
-      process.env.Googleapikey
+      apiKey
     );
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
     const result = await model.generateContent(message);

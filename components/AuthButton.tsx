@@ -20,8 +20,7 @@ export default async function AuthButton() {
 
   return user ? (
     <div className="flex items-center bg-[#171717]">
-       {/* {user.email?.substring(0,user.email.indexOf('@'))} */}
-       <ProfileMenu email={user.email}/>
+      <ProfileMenu email={user.email} />
       <form action={signOut}>
         <button className="px-4 rounded-md no-underline bg-btn-background hover:bg-btn-background-hover">
           Logout

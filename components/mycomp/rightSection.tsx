@@ -163,22 +163,24 @@ export default function ({email}:{email:string|undefined}) {
             <button
               className="border-[0.5px] border-slate-600 rounded-xl p-3 m-2 flex flex-col hover:bg-zinc-800"
               onClick={() => {
-                setMessage("suggest some names");
+                setMessage("Write an email to request a quote from local plumbers");
               }}
             >
               <div className="text-semibold text-sm text-white flex-start">
-                Suggest some names
+                Write an email
               </div>
               <div className="text-xs mt-1">
-                for my cafe -by-day,bar-by-night buisness
+                to request a quote from local plumbers
               </div>
             </button>
-            <button className="border-[0.5px] border-slate-600 rounded-xl p-3 m-2 flex flex-col hover:bg-zinc-800">
+            <button className="border-[0.5px] border-slate-600 rounded-xl p-3 m-2 flex flex-col hover:bg-zinc-800" onClick={() => {
+                setMessage(" Suggest fun activities to help me make friends in a new city");
+              }}>
               <div className="text-semibold text-sm text-white flex-start">
-                Suggest some names
+                Suggest fun activities
               </div>
               <div className="text-xs mt-1">
-                for my cafe -by-day,bar-by-night buisness
+                to help me make friends in a new city
               </div>
             </button>
           </div>

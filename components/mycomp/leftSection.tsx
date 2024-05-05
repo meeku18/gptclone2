@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
-import { redirect } from "next/navigation";
+import { useBool } from "@/store/context";
+import Logout from "./logout";
+
 
 interface QuesAns {
   question: string;
@@ -9,14 +11,11 @@ interface QuesAns {
 const LeftSection = ({data}:{data:QuesAns[]|undefined}) => {
 
   const [allQuesAns, setAllQuesAns] = useState<QuesAns[]>(data||[{question:'',response:''}]);
-  const helper = ()=> {
-    console.log("hello");
-    localStorage.setItem("newChat","true");
-  }
+
   return (
     <div className="w-full bg-[#171717] h-full flex flex-col justify-between">
       <div className="flex justify-center">
-        <button className="flex justify-center items-center hover:bg-zinc-800 rounded-md mt-2 h-[45px] w-[250px] hover:bg-zinc-700ff" onClick={helper}>
+        <button className="flex justify-center items-center hover:bg-zinc-800 rounded-md mt-2 h-[45px] w-[250px] hover:bg-zinc-700ff" >
           <div>
             <div className="rounded-full  h-[30px] w-[30px] border-[0.5px] border-slate-400 flex items-center justify-center">
               <svg
@@ -110,6 +109,7 @@ const LeftSection = ({data}:{data:QuesAns[]|undefined}) => {
         </div>
       )}
     </div>
+    
   );
 };
 export default LeftSection;

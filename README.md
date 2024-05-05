@@ -1,5 +1,6 @@
 
 <img width="1436" alt="Screenshot 2024-05-05 at 8 28 48 PM" src="https://github.com/meeku18/gptclone2/assets/97672118/394950c0-87f6-4a37-b15a-65175560a4e2">
+#SIGN IN / SIGN UP PAGE
 <img width="762" alt="Screenshot 2024-05-05 at 8 20 34 PM" src="https://github.com/meeku18/gptclone2/assets/97672118/c3b25334-0726-49c4-8631-ff26018acdab">
 <img width="259" alt="Screenshot 2024-05-05 at 8 24 40 PM" src="https://github.com/meeku18/gptclone2/assets/97672118/0d191eb9-1659-4f02-a92b-5ce42182412c">
 <img width="1059" alt="Screenshot 2024-05-05 at 8 24 31 PM" src="https://github.com/meeku18/gptclone2/assets/97672118/61f4c5da-d387-4770-89df-93d9b34fdebf">

@@ -29,8 +29,11 @@ Welcome to the repository for GPT Clone 2 project, an application designed to pr
 ![Output 1](https://github.com/meeku18/gptclone2/assets/97672118/8d266c18-7d55-40c9-a1b2-dc370c01a53f)
 ![Output 2](https://github.com/meeku18/gptclone2/assets/97672118/61f4c5da-d387-4770-89df-93d9b34fdebf)
 
-### Old Interaction
-![Old Interaction](https://github.com/meeku18/gptclone2/assets/97672118/e0683c01-a1f9-4236-9727-ce6666c6b859)
+### Supabase Database
+<div style="display:flex;justify-content:space-between;">
+    <img width="49%" alt="Screenshot 1" src="https://github.com/meeku18/gptclone2/assets/97672118/113b7399-8ecf-407d-8869-6f17aec965b4">
+    <img width="49%" alt="Screenshot 2" src="https://github.com/meeku18/gptclone2/assets/97672118/7681a49b-32e8-4f4f-84e5-7b9efa0f5cf3">
+</div>
 
 ### Logout
 ![Logout functionality](https://github.com/meeku18/gptclone2/assets/97672118/0d191eb9-1659-4f02-a92b-5ce42182412c)

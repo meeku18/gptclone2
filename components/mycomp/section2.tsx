@@ -2,16 +2,18 @@
 import { useState } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import helper from "./inserting_data";
+import Chatgptbutton from "./chatgptbutton";
 
 interface QuesAns {
   question: string;
   response: string;
 }
 export default function ({ email }: { email: string | undefined }) {
-
+  
   const [message, setMessage] = useState("");
   const [allQuesAns, setAllQuesAns] = useState<QuesAns[]>([]);
   const [loading, isLoading] = useState(false);
+
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
       callApi();
@@ -19,9 +21,8 @@ export default function ({ email }: { email: string | undefined }) {
   };
   const callApi = async () => {
     isLoading(true);
-    const apiKey = process.env.Googleapikey ?? '';
     const genAI = new GoogleGenerativeAI(
-      apiKey
+      "AIzaSyC80C-4jpeXeiHsCSfZfrliwVCz_HhA4WQ"
     );
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
     const result = await model.generateContent(message);
@@ -38,18 +39,11 @@ export default function ({ email }: { email: string | undefined }) {
     setMessage("");
     isLoading(false);
   };
+
+  
   return (
     <div className="flex flex-col w-full h-full justify-between bg-[#212121] ">
-      <div className="mt-1 ml-1">
-        <button
-          type="button"
-          className="flex text-white hover:bg-zinc-800  focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-2 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-zinc-800 me-2 mb-2"
-        >
-          <div className="text-lg flex ">
-            ChatGPT <div className="px-1 text-zinc-400">3.5</div>
-          </div>
-        </button>
-      </div>
+      <Chatgptbutton/>
       {allQuesAns.length > 0 && (
         <div className="overflow-y-auto h-[79vh] ">
           {allQuesAns.length > 0 &&

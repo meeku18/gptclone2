@@ -95,7 +95,7 @@ export default function Login({
         {searchParams?.message && (
           <p className="mt-4 p-4 bg-foreground/10 text-center text-black">
             {searchParams.message}<br></br>
-            email rate limit exceeded: my credentials "email:hrishabh1800@gmail.com password:hrishabh"
+            {/* email rate limit exceeded: my credentials "email:hrishabh1800@gmail.com password:hrishabh" */}
           </p>
         )}
       </form>

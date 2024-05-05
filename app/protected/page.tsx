@@ -1,9 +1,8 @@
-import LeftSection from "@/components/mycomp/leftSection";
-import RightSection from "@/components/mycomp/rightSection";
 import Logout from "@/components/mycomp/logout";
 import { createClient } from "@/utils/supabase/server";
 import retreiving_data from "@/components/mycomp/retreiving_data";
-import Parent from "@/components/mycomp/parent";
+import Section1 from "@/components/mycomp/section1";
+import Section2 from "@/components/mycomp/Section2";
 
 export default async function ProtectedPage() {
   const supabase = createClient();
@@ -24,13 +23,16 @@ export default async function ProtectedPage() {
     console.log(insertError);
   }
   const data = await retreiving_data({ email: user?.email });
+
+
   return(
-    <div className="w-full h-full bg-[#212121]">
-      <div>
-        <Parent email={user?.email} data={data}/>
+    <div className="h-full bg-[#212121] text-white grid grid-cols-[18%_82%]">
+      <div className="h-full flex flex-col justify-between ">
+          <Section1 data={data}></Section1>
+          <Logout/>
       </div>
-      <div className="w-[18%]">
-        <Logout></Logout>
+      <div>
+          <Section2 email={user?.email}></Section2>
       </div>
     </div>
   )

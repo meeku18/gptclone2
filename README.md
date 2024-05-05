@@ -1,4 +1,4 @@
-# GPT Clone 2
+# GPT Clone 
 
 This repository contains screenshots for the GPT Clone 2 project.
 

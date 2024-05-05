@@ -26,7 +26,7 @@ export default async function ProtectedPage() {
 
 
   return(
-    <div className="h-full bg-[#212121] text-white grid grid-cols-[18%_82%]">
+    <div className="h-full bg-[#212121] text-white grid grid-cols-[0%_100%] xl:grid-cols-[18%_82%]">
       <div className="h-full flex flex-col justify-between ">
           <Section1 data={data}></Section1>
           <Logout/>

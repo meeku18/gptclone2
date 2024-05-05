@@ -22,7 +22,7 @@ export default function Login({
 
     if (error) {
       return redirect(
-        "/login?message=Could not authenticate use due to email req exceed ,Please use my credential in this case email: hrishabhjais18@getMaxListeners.com , password :hrishabh"
+        "/login?message=Could not authenticate use due to email req exceed ,Please use my credential in this case email: hrishabh1800@gmail.com , password :hrishabh"
       );
     }
 

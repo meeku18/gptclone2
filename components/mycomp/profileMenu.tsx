@@ -2,11 +2,6 @@
 import React, { useState } from 'react';
 
 const ProfileMenu = ({email}:{email:string|undefined}) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
 
   return (
     <div className="relative pl-2">
@@ -19,14 +14,6 @@ const ProfileMenu = ({email}:{email:string|undefined}) => {
         </div>
         <button onClick={toggleDropdown} className=" text-white px-4 py-2 rounded-sm focus:outline-none">{email?email.substring(0,12):"user1"}</button>
       </div>
-      {/* Dropdown menu */}
-      {isOpen && (
-        <div className="absolute z-10 top-0 mt-10 w-48 bg-white rounded-md shadow-lg border border-gray-200">
-          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Option 1</a>
-          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Option 2</a>
-          <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Option 3</a>
-        </div>
-      )}
     </div>
   );
 };

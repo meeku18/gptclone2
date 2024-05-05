@@ -2,7 +2,7 @@ import Logout from "@/components/mycomp/logout";
 import { createClient } from "@/utils/supabase/server";
 import retreiving_data from "@/components/mycomp/retreiving_data";
 import Section1 from "@/components/mycomp/section1";
-import Section2 from "@/components/mycomp/Section2";
+import Section2 from "@/components/mycomp/section2";
 
 export default async function ProtectedPage() {
   const supabase = createClient();
